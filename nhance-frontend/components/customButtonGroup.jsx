@@ -7,14 +7,13 @@ const CustomButtonGroup = ({
   additionalStyle,
 }) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
-  buttonList = ["Male", "Female"];
   return (
     <View className="space-x-4 px-3 flex-row">
       <Text className="text-black-200 font-pmedium text-base">Gender</Text>
       <ButtonGroup
         buttons={buttonList}
         selectedIndex={selectedButtonIndex}
-        onPress={(value) => selectedButtonIndex(value)}
+        onPress={(value) => setSelectedButtonIndex(value)}
         buttonContainerStyle={{
           height: "100%",
           flex: 1,

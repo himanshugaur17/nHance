@@ -9,10 +9,10 @@ const FormTextField = ({
 }) => {
   return (
     <View className="space-x-4 px-3 flex-row">
-      <Text className="text-black-200 font-pmedium text-base">Name</Text>
+      <Text className="text-black-200 font-pmedium text-base">{title}</Text>
       <TextInput
         onChangeText={handleChangeText}
-        placeholder="Name"
+        placeholder={placeholder}
         placeholderTextColor="#7b7b8b"
         secureTextEntry={secureEntry}
         className="w-full h-16 bg-gray-100 border-2 rounded-2xl focus:border-primary
