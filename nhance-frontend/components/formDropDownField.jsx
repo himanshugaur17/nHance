@@ -5,17 +5,24 @@ const FormDropDownField = ({ title, defaultValue, dropDownList }) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue);
   return (
     <View className="space-x-4 px-3 flex-row">
-      <Text className="text-black-200 font-pmedium text-base">{title}</Text>
+      <Text className="text-black-200 font-pmedium text-base pt-4 pl-2 w-1/5">
+        {title}
+      </Text>
       <View
-        className="w-full h-16 bg-gray-100 border-2 rounded-2xl focus:border-primary text-black
-      font-psemibold text-base pl-2 pb-2"
+        className="flex-1 h-16 bg-gray-50 border-2 border-red-300 rounded-2xl focus:border-primary
+    text-black font-psemibold text-base px-2 pb-2"
       >
         <Picker
           selectedValue={selectedValue}
           onValueChange={(itemValue) => setSelectedValue(itemValue)}
+          style={{ marginLeft: -10 }}
         >
           {dropDownList.map(({ label, value }) => (
-            <Picker.Item label={label} value={value} />
+            <Picker.Item
+              label={label}
+              value={value}
+              style={{ paddingLeft: 0 }}
+            />
           ))}
         </Picker>
       </View>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TextInput, View } from "react-native";
+import { KeyboardAvoidingView, Text, TextInput, View } from "react-native";
 
 const FormTextField = ({
   title,
@@ -8,17 +8,22 @@ const FormTextField = ({
   handleChangeText,
 }) => {
   return (
+    <KeyboardAvoidingView>
     <View className="space-x-4 px-3 flex-row">
-      <Text className="text-black-200 font-pmedium text-base">{title}</Text>
+      <Text className="text-black-200 font-pmedium text-base pt-4 pl-2 w-1/5">
+        {title}
+      </Text>
+
       <TextInput
         onChangeText={handleChangeText}
         placeholder={placeholder}
         placeholderTextColor="#7b7b8b"
         secureTextEntry={secureEntry}
-        className="w-full h-16 bg-gray-100 border-2 rounded-2xl focus:border-primary
-    text-black font-psemibold text-base px-2 pb-2"
+        className="flex-1 h-16 bg-gray-50 border-2 border-red-300 rounded-2xl focus:border-primary
+    text-black font-psemibold text-base px-4 pb-2"
       />
     </View>
+    </KeyboardAvoidingView>
   );
 };
 

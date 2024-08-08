@@ -5,7 +5,7 @@ const RootLayout = () => {
   return (
     <>
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="profile"></Stack.Screen>
+        <Stack.Screen name="index" />
       </Stack>
       <StatusBar backgroundColor="#161622" barStyle="light-content" />
     </>
